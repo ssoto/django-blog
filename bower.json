@@ -1,0 +1,21 @@
+{
+  "name": "django-blog",
+  "homepage": "https://github.com/ssoto/django-blog",
+  "authors": [
+    "Sergio Soto <scots4ever@gmail.com>"
+  ],
+  "description": "",
+  "main": "bower.json",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
