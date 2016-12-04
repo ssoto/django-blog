@@ -1,3 +1,82 @@
-<h1>
-Today is {{week_day_name}}
-</h1>
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <style>
+         .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            display: block;
+         }
+         img {
+             display: block;
+             margin: auto;
+             width: 50%;
+         }
+         .big-text {
+            font-size: 150%;
+            font-weight: bold;
+         }
+         .friday-text {
+            font-family: futura;
+            font-style: italic;
+
+            color:#313131;
+            font-size:300%;
+            font-weight: bold;
+            -webkit-animation:colorchange 20s infinite alternate;
+          }
+
+          @-webkit-keyframes colorchange {
+            0% {
+              color: blue;
+            }
+            10% {
+              color: #8e44ad;
+            }
+            20% {
+              color: #1abc9c;
+            }
+            30% {
+              color: #d35400;
+            }
+            40% {
+              color: blue;
+            }
+            50% {
+              color: #34495e;
+            }
+            60% {
+              color: blue;
+            }
+            70% {
+              color: #2980b9;
+            }
+            80% {
+              color: #f1c40f;
+            }
+            90% {
+              color: #2980b9;
+            }
+            100% {
+              color: pink;
+            }
+          }
+      </style>
+   </head>
+   <body>
+      <div class="center">
+         <div>
+            <h1>Today is...
+            {% if week_day_name == 'Friday'%}
+               <span class="friday-text">{{week_day_name}}</span>
+            {% else %}
+               <span class="big-text">{{week_day_name}}</span>
+            {% endif %}
+            </h1>
+            <img src="{{image_url}}" alt="HTML5 Icon" style="width:320px;height:320px;">
+        </div>
+        </div>
+   </body>
+</html

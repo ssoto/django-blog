@@ -2,20 +2,30 @@ from django.shortcuts import render
 from datetime import datetime
 
 
-WEEKDAY_MAPPING = {
-    0: 'Monday',
-    1: 'Tuesday',
-    2: 'Wednesday',
-    3: 'Thursday',
-    4: 'Friday',
-    5: 'Saturday',
-    6: 'Sunday'
+DEFAULT_IMAGE = 'http://sd.keepcalm-o-matic.co.uk/i/the-problem-with-today-is-that-its-not-friday.png'
+MONTDAY_TO_THURSDAY = 'https://media.giphy.com/media/dBzquitQiuhjO/giphy.gif'
+GIFS = {
+    # monday
+    0: MONTDAY_TO_THURSDAY,
+    1: MONTDAY_TO_THURSDAY,
+    2: DEFAULT_IMAGE,
+    3: DEFAULT_IMAGE,
+    # the great friday
+    4: 'https://media.giphy.com/media/3oEjHKjVoNVsCeMoDe/giphy.gif',
+    # saturday
+    5: 'https://media.giphy.com/media/l2R072qHOAH9YceZ2/giphy.gif',
+    # sunday
+    6: 'https://media.giphy.com/media/3osxYva0ooiSryNiBa/giphy.gif',
 }
 
 
 def today(request):
-    date_today = datetime.today()
-    week_day_name = WEEKDAY_MAPPING.get(date_today.weekday())
+    today_date = datetime.today()
+
+    variables = {
+        'week_day_name': today_date.strftime("%A"),
+        'image_url': GIFS.get(today_date.weekday())
+    }
     return render(request,
                   'isItFriday/what_day_is_today.html',
-                  {'week_day_name': week_day_name})
+                  variables)
