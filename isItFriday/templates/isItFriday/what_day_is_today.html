@@ -1,78 +1,20 @@
 <!DOCTYPE html>
 
+{% load staticfiles %}
+
 <html>
    <head>
-      <style>
-         .center {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-            display: block;
-         }
-         img {
-             display: block;
-             margin: auto;
-             width: 50%;
-         }
-         .big-text {
-            font-size: 150%;
-            font-weight: bold;
-         }
-         .friday-text {
-            font-family: futura;
-            font-style: italic;
-
-            color:#313131;
-            font-size:300%;
-            font-weight: bold;
-            -webkit-animation:colorchange 20s infinite alternate;
-          }
-         .right-text {
-            text-align: right;
-         }
-
-          @-webkit-keyframes colorchange {
-            0% {
-              color: blue;
-            }
-            10% {
-              color: #8e44ad;
-            }
-            20% {
-              color: #1abc9c;
-            }
-            30% {
-              color: #d35400;
-            }
-            40% {
-              color: blue;
-            }
-            50% {
-              color: #34495e;
-            }
-            60% {
-              color: blue;
-            }
-            70% {
-              color: #2980b9;
-            }
-            80% {
-              color: #f1c40f;
-            }
-            90% {
-              color: #2980b9;
-            }
-            100% {
-              color: pink;
-            }
-          }
-      </style>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/isItFriday.css' %}">
    </head>
    <body>
       <div class="center">
-         <div>
-            <h1>Today is...
-            {% if week_day_name == 'Friday'%}
+         <!--img src="{% static 'img/a.jpg' %}" alt="Example"/-->
+         <div class="col-md-8 container">
+            <div>
+               <h1>Today is... {% if week_day_name == 'Friday'%}
+            </div>
                <span class="friday-text">{{week_day_name}}</span>
             {% else %}
                <span class="big-text">{{week_day_name}}</span>
@@ -82,7 +24,7 @@
             <div class="right-text">
                <p>Refresh to update image!</p>
             </div>
-        </div>
+         </div>
         </div>
    </body>
 </html
