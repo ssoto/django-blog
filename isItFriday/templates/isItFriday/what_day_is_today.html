@@ -11,7 +11,7 @@
    <body>
       <div class="center">
          <!--img src="{% static 'img/a.jpg' %}" alt="Example"/-->
-         <div class="col-md-8 container">
+         <div class="col-md-8 container-fluid">
             <div>
                <h1>Today is... {% if week_day_name == 'Friday'%}
             </div>
@@ -20,9 +20,9 @@
                <span class="big-text">{{week_day_name}}</span>
             {% endif %}
             </h1>
-            <img src="{{image_url}}" alt="HTML5 Icon" style="width:320px;height:320px;">
-            <div class="right-text">
-               <p>Refresh to update image!</p>
+            <img class="img-responsive" src="{{image_url}}" alt="HTML5 Icon">
+            <div>
+               <p class="text-center"><small>Refresh to update image!</small></p>
             </div>
          </div>
         </div>
