@@ -7,13 +7,15 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="{% static 'css/isItFriday.css' %}">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
    </head>
    <body>
       <div class="center">
          <!--img src="{% static 'img/a.jpg' %}" alt="Example"/-->
          <div class="col-md-8 container-fluid">
             <div>
-               <h1>Today is... {% if week_day_name == 'Friday'%}
+               <h4>Today is... </h4>
+               <h2>{% if week_day_name == 'Friday'%}</h2>
             </div>
                <span class="friday-text">{{week_day_name}}</span>
             {% else %}
